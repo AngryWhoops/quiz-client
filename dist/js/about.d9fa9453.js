@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkquiz_client"]=self["webpackChunkquiz_client"]||[]).push([[443],{7381:function(n,u,t){t.r(u),t.d(u,{default:function(){return f}});var e=t(3396);const i={class:"about"},a=(0,e._)("h1",null,"This is an about page",-1),c=[a];function r(n,u){return(0,e.wg)(),(0,e.iD)("div",i,c)}var s=t(89);const l={},o=(0,s.Z)(l,[["render",r]]);var f=o}}]);
-//# sourceMappingURL=about.d9fa9453.js.map
