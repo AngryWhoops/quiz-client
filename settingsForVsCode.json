@@ -1,0 +1,37 @@
+{
+    "workbench.startupEditor": "none",
+    "gitlens.defaultDateFormat": "DD MM YYYY HH:MM",
+    "eslint.format.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "git.autofetch": true,
+    "gitlens.statusBar.enabled": false,
+    "eslint.lintTask.enable": true,
+    "eslint.run": "onSave",
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "files.eol": "\n",
+    "[html]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "volar-document-features.trace.server": "verbose",
+    "volar-language-features-2.trace.server": "verbose",
+    "volar-language-features.trace.server": "verbose",
+    "volar.autoCompleteRefs": true,
+    "volar.vueserver.useSecondServer": true,
+    "eslint.nodeEnv": "",
+    "volar.preview.transparentGrid": true
+}
