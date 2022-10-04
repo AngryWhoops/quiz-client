@@ -29,6 +29,11 @@ export default {
     modelValue() {
       this.isChecked = this.modelValue;
     }
+  },
+  methods: {
+    onClick(e) {
+      this.$emit('update:modelValue', this.isChecked);
+    }
   }
 };
 
