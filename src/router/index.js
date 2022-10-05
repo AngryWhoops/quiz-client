@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import IndexPage from '@/views/IndexPage.vue';
+import FirstPage from '@/views/FirstPage.vue';
 // import HomeView from '../views/HomeView.vue';
 
 const routes = [
@@ -8,6 +9,11 @@ const routes = [
     name: 'IndexPage',
     component: IndexPage,
   },
+  {
+    path: '/first',
+    name: 'FirstPage',
+    component: FirstPage
+  }
   // {
   //   path: '/about',
   //   name: 'about',

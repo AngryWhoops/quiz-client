@@ -2,30 +2,20 @@
   <div class="themes__wrapper">
     <h1 class="themes__title">
       Оказание первой помощи. Практическая часть
-    </h1>    
+    </h1>
     <h2 class="themes__title">Выбирете тему:</h2>
 
-    <div 
-      class="themes-list"
-      v-for="theme in themes"
-      v-bind:key="theme"
-      v-bind:theme="theme">
+    <div class="themes-list" v-for="theme in themes" v-bind:key="theme" v-bind:theme="theme">
       <label class="label">
-        <input 
-          class="input" 
-          type="radio" 
-          name="theme" 
-          v-model="inputValue"
-          :value="theme.value">{{theme.label}}
+        <input class="input" type="radio" name="theme" v-model="inputValue" :value="theme.value">{{theme.label}}
       </label>
     </div>
-    
+
     <div class="btn__wrapper">
-      <button 
-        class="btn"
-        @click="isThemeChecked"
-      >Начать
-      </button>
+      <router-link to="/first" class="btn" v-if="inputValue">Начать</router-link>
+      <!-- <button class="btn" @click="isThemeChecked">
+        
+      </button> -->
     </div>
   </div>
 </template>
@@ -75,13 +65,13 @@ export default {
         },
       ],
       inputValue: '',
-    }   
+    }
   },
   methods: {
-    isThemeChecked() {      
-      if(!this.inputValue) {        
-        alert('Тема не выбрана');        
-      }      
+    isThemeChecked() {
+      if (!this.inputValue) {
+        alert('Тема не выбрана');
+      }
     },
   },
 };
