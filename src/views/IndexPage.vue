@@ -10,7 +10,6 @@
         <input class="input" type="radio" name="theme" v-model="inputValue" :value="theme.value">{{theme.label}}
       </label>
     </div>
-
     <div class="btn__wrapper">
       <router-link to="/first" class="btn" v-if="inputValue">Начать</router-link>
       <!-- <button class="btn" @click="isThemeChecked">
