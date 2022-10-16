@@ -1,25 +1,27 @@
 <template>
+  <HeaderComponent></HeaderComponent>
   <div class="themes__wrapper">
     <h1 class="themes__title">
       Оказание первой помощи. Практическая часть
     </h1>
-    <h2 class="themes__title">Выбирете тему:</h2>
+    <h2 class="themes__title">Темы, по которым будет проводится тестирование:</h2>
 
-    <div class="themes-list" v-for="theme in themes" v-bind:key="theme" v-bind:theme="theme">
-      <label class="label">
-        <input class="input" type="radio" name="theme" v-model="inputValue" :value="theme.value">{{theme.label}}
-      </label>
-    </div>
+    <ul class="themes-list" >
+      <li class="list__item" v-for="theme in themes" v-bind:key="theme" v-bind:theme="theme">
+        <p :value="theme.value">{{theme.label}}</p>
+      </li>
+    </ul>
+
     <div class="btn__wrapper">
-      <router-link to="/first" class="btn" v-if="inputValue">Начать</router-link>
-      <!-- <button class="btn" @click="isThemeChecked">
-        
-      </button> -->
+      <router-link to="/question" class="btn">Начать</router-link>
     </div>
+
   </div>
 </template>
 
 <script>
+import HeaderComponent from "@/components/HeaderComponent.vue";
+
 export default {
   data() {
     return {
@@ -61,16 +63,11 @@ export default {
           label: 'Отработка приемов удаления инородного тела из верхних дыхательных путей пострадавшего',
         },
       ],
-      inputValue: '',
     }
   },
-  methods: {
-    isThemeChecked() {
-      if (!this.inputValue) {
-        alert('Тема не выбрана');
-      }
-    },
-  },
+  components: {
+    HeaderComponent
+  }
 };
 </script>
 
@@ -81,26 +78,19 @@ export default {
 .themes__title
   margin-bottom: 30px
 .themes-list
-  width: 70%
+  width: 75%
   margin: 0 auto
   list-style-type: none
-.label
-  width: 100%
-  display: inline-block
+.list__item
   padding: 10px 20px
-  cursor: pointer
   background: #fcb291
   margin-bottom: 10px
   border-radius: 10px
+  cursor: default
   font-size: 20px    
   transition: 0.3s all
   &:hover
     transform: scale(1.05)
-.input
-  margin-right: 10px
-  cursor: pointer
-input[type='radio']
-  color: red
 .btn__wrapper
   display: flex
   justify-content: center
@@ -111,7 +101,10 @@ input[type='radio']
   border-radius: 10px
   font-size: 25px
   cursor: pointer
-.text
-  display: none
+  text-decoration: none
+  color: #000
+  transition: 0.3s all
+  &:hover
+    transform: scale(1.05)
 </style>
 
