@@ -16,4 +16,5 @@ export default {
   padding: 0
   box-sizing: border-box
   font-family: 'Open Sans'
+  
 </style>

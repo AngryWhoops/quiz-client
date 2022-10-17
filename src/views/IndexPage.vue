@@ -77,6 +77,7 @@ export default {
   background: #FED6BC
 .themes__title
   margin-bottom: 30px
+  font-size: 25px
 .themes-list
   width: 75%
   margin: 0 auto
