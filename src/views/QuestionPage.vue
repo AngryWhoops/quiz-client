@@ -29,7 +29,7 @@
         </div>
 
         <div class="img_wrapper">
-            <img class="task__img" src="@/assets/img/question-img/1car.jpg" alt="task">
+            <img class="task__img" src="@/assets/img/question-img/1car.webp" alt="task">
         </div>
     </div>    
 
