@@ -1,27 +1,29 @@
 <template>
     <HeaderComponent></HeaderComponent>
-    
+
     <div class="task">
         <div class="question__wrapper">
             <h3 class="question">
-                Вопрос №1: Внимательно посмотрите на изображение. Вам необходимо оценить обстановку и осуществить правильную последовательность действий
+                Вопрос №1: Внимательно посмотрите на изображение. Вам необходимо оценить обстановку и осуществить
+                правильную последовательность действий
             </h3>
-            <ul class="answers_list" >    
+            <ul class="answers_list">
                 <li>
                     <label class="answers_list__item">
-                        <input type="radio" name="answer" value="true" v-model="inputValue">Вытащить пострадавшего из автомобиля и оттащить на безопасное расстояние
+                        <input type="radio" name="answer" value="true" v-model="inputValue">Вытащить пострадавшего из
+                        автомобиля и оттащить на безопасное расстояние
                     </label>
                 </li>
                 <li>
                     <label class="answers_list__item">
                         <input type="radio" name="answer" value="false" v-model="inputValue">Вызвать скорую помощь
-                    </label> 
+                    </label>
                 </li>
                 <li>
                     <label class="answers_list__item">
                         <input type="radio" name="answer" value="false" v-model="inputValue">Вызвать пожарных
                     </label>
-                </li>            
+                </li>
             </ul>
             <button class="btn">
                 Далее
@@ -31,21 +33,22 @@
         <div class="img_wrapper">
             <img class="task__img" src="@/assets/img/question-img/1car.webp" alt="task">
         </div>
-    </div>    
+    </div>
 
 </template>
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import store from '@/store/index';
 
 export default {
     data() {
-        return{
+        return {
             questions: [
                 {
                     questionText: 'Вопрос №1: Внимательно посмотрите на изображение. Вам необходимо оценить обстановку и осуществить правильную последовательность действий',
                     answers: [
-                        
+
                     ]
                 },
                 {
@@ -62,17 +65,20 @@ export default {
                 },
             ],
             inputValue: '',
+            test: store.state.answers
         }
     },
     methods: {
         isBtnActive() {
-            if(!inputValue) {
-                
+            if (!inputValue) {
             }
-        }
+        },
     },
     components: {
         HeaderComponent,
+    },
+    store: {
+        store
     }
 }
 </script>
@@ -119,5 +125,5 @@ export default {
         transform: scale(1.05)
     .active
         background: #fcb291
-        
+
 </style>
