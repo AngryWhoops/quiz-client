@@ -1,19 +1,19 @@
 <template>
    
-    <div class="task" v-for="(question, index) in questions" v-bind:key="question">       
-        
-        <div class="question__wrapper" v-show="index === questionIndex">
+    <div class="task">
+             
+        <div class="question__wrapper">
             <h3 class="question">
-                {{question.questionText}}
+                {{ localObject[viewQuestionHead] }}
             </h3>
             <ul class="answers_list">
-                <li v-for="answer in question.answers" v-bind:key="answer">
+                <li v-for="item in localObject[arrayElements]" v-bind:key="item[elementValue]">
                     <label class="answers_list__item">
-                        <input type="radio" name="answer" v-bind:value="answer.answerValue" v-model="inputValue">{{answer.answerText}}
-                    </label>
+                        <input type="radio" name="answer" v-bind:value="item[elementValue]" v-model="inputValue">{{ item.answerText }}
+                    </label>                    
                 </li>                
             </ul>
-            <button class="btn" v-on:click="next">
+            <button class="btn" @click="stepIncrement">
                 Далее
             </button>            
         </div>
@@ -30,25 +30,56 @@
 export default {
     data() {
         return {
-            inputValue: '',   
-            questionIndex: 0,                  
+            inputValue: '',
+            localObject: this.questionObject,
+            localStep: this.stepInput,
         }
     },
-    props: {        
-        questions: {
-            step: Number,
-            questionText: String,
-            imgPath: String,
-            theme: Number,
-            answers: Array,
+    props: {
+        /**
+         *Входящие данные
+        */        
+        questionObject: {
+            type: Object,
             required: true
-        }       
-    },
-    methods: {
-        next: function() {
-            this.questionIndex++;
+        },
+        /**
+         *Поле с текстом вопроса(заголовок вопроса)
+         */
+        viewQuestionHead: {
+            type: String
+        }, 
+        /**
+         * Массив ответов
+         */
+        arrayElements: {
+            type: String,
+        },
+        /**
+         * Значение инпута
+         */
+        elementValue: {
+            type: String,
+        },
+        /**
+         * Входящий шаг
+         */
+        stepInput: {
+            type: Number
         }
     },
+    emits: ['onUpdate'],
+    methods: {
+        stepIncrement() {
+            this.localStep++;
+            this.$emit('onUpdate', this.localStep);
+        }
+    },
+    watch: {
+        questionObject() {
+            this.localObject = this.questionObject;
+        },
+    }
 }
 </script>
 

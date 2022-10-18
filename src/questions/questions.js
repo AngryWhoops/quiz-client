@@ -5,7 +5,7 @@ export default {
             questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
             imgPath: '',
             theme: 1,
-            answers:[
+            jopa:[
                 {
                     answerValue: false,
                     answerText: 'Вызвать скорую помощь',

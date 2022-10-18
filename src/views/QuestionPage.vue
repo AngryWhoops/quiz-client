@@ -3,8 +3,31 @@
     <div class="task_wrapper">
         
     </div>
-    <QuestionComponent v-bind:questions="questions"></QuestionComponent>
-
+    <QuestionComponent 
+        v-bind:question-object="questions[0]"
+        view-question-head="questionText"
+        array-elements="answers"
+        element-value="answerValue"
+        :step-input="step"
+        @on-update="step = $event"
+        v-if="step == 0"
+        />
+    <QuestionComponent 
+        v-bind:question-object="questions[1]" 
+        view-question-head="questionText" 
+        array-elements="answers" 
+        element-value="answerValue"
+        :step-input="step"
+        @on-update="step = $event"
+        v-if="step == 1"/>
+    <QuestionComponent 
+        v-bind:question-object="questions[2]" 
+        view-question-head="questionText" 
+        array-elements="answers"
+        element-value="answerValue"
+        :step-input="step"
+        @on-update="step = $event"
+        v-if="step == 2"/>
     <!-- <div class="task">
         <div class="question__wrapper">
             <h3 class="question">
@@ -49,17 +72,15 @@ import store from '@/store/index';
 export default {
     data() {
         return {
-            // inputValue: '',
-            test: store.state.answers,            
+            step: 0,
             questions: [
                 {
-                    step: 1,
                     questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
                     imgPath: '@/assets/img/question-img/1car.webp',
                     theme: 1,
                     answers:[
                         {
-                            answerValue: false,
+                            answerValue: 1,
                             answerText: 'Вызвать скорую помощь',
                         },
                         {
@@ -67,13 +88,12 @@ export default {
                             answerText: 'Вытащить пострадавшего из автомобиля и перенести на безопасное расстояние',
                         },
                         {
-                            answerValue: false,
+                            answerValue: 2,
                             answerText: 'Вызвать пожарных',
                         }
                     ]
                 },
                 {
-                    step: 2,
                     questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
                     imgPath: '@/assets/img/question-img/2car.webp',
                     theme: 1,
@@ -93,7 +113,6 @@ export default {
                     ]
                 },
                 {
-                    step: 3,
                     questionText: 'Оцените обстановку и выберите приоритетность оказания первой помощи пострадавшим',
                     imgPath: '@/assets/img/question-img/1car.webp',
                     theme: 1,
@@ -134,7 +153,8 @@ export default {
     },
     store: {
         store
-    },    
+    },  
+
 }
 </script>
 
