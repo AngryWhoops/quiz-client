@@ -1,11 +1,14 @@
 <template>
     <HeaderComponent></HeaderComponent>
+    <div class="task_wrapper">
+        
+    </div>
+    <QuestionComponent v-bind:questions="questions"></QuestionComponent>
 
-    <div class="task">
+    <!-- <div class="task">
         <div class="question__wrapper">
             <h3 class="question">
-                Вопрос №1: Внимательно посмотрите на изображение. Вам необходимо оценить обстановку и осуществить
-                правильную последовательность действий
+                {{question.questionText}}
             </h3>
             <ul class="answers_list">
                 <li>
@@ -33,87 +36,151 @@
         <div class="img_wrapper">
             <img class="task__img" src="@/assets/img/question-img/1car.webp" alt="task">
         </div>
-    </div>
+    </div> -->
 
 </template>
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import QuestionComponent from "@/components/QuestionComponent.vue";
+// import questions from "@/questions/questions";
 import store from '@/store/index';
 
 export default {
     data() {
         return {
-            inputValue: '',
-            test: store.state.answers
+            // inputValue: '',
+            test: store.state.answers,            
+            questions: [
+                {
+                    step: 1,
+                    questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
+                    imgPath: '@/assets/img/question-img/1car.webp',
+                    theme: 1,
+                    answers:[
+                        {
+                            answerValue: false,
+                            answerText: 'Вызвать скорую помощь',
+                        },
+                        {
+                            answerValue: true,
+                            answerText: 'Вытащить пострадавшего из автомобиля и перенести на безопасное расстояние',
+                        },
+                        {
+                            answerValue: false,
+                            answerText: 'Вызвать пожарных',
+                        }
+                    ]
+                },
+                {
+                    step: 2,
+                    questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
+                    imgPath: '@/assets/img/question-img/2car.webp',
+                    theme: 1,
+                    answers:[
+                        {
+                            answerValue: false,
+                            answerText: 'Вызвать скорую помощь',
+                        },
+                        {
+                            answerValue: false,
+                            answerText: 'Подойти к пострадавшему и проверить наличие признаков жизни',
+                        },
+                        {
+                            answerValue: true,
+                            answerText: 'Обесточить кабель с помощью электрощитка',
+                        }
+                    ]
+                },
+                {
+                    step: 3,
+                    questionText: 'Оцените обстановку и выберите приоритетность оказания первой помощи пострадавшим',
+                    imgPath: '@/assets/img/question-img/1car.webp',
+                    theme: 1,
+                    answers:[
+                        {
+                            answerValue: false,
+                            answerText: 'Сначала оказать помощь пострадавшему А, потом Б, потом В',
+                        },
+                        {
+                            answerValue: false,
+                            answerText: 'Сначала оказать помощь пострадавшему А, потом В, потом Б',
+                        },
+                        {
+                            answerValue: true,
+                            answerText: 'Сначала оказать помощь пострадавшему Б, потом А, потом В',
+                        },
+                        {
+                            answerValue: false,
+                            answerText: 'Сначала оказать помощь пострадавшему Б, потом В, потом А',
+                        },
+                        {
+                            answerValue: false,
+                            answerText: 'Сначала оказать помощь пострадавшему В, потом А, потом Б',
+                        },
+                        {
+                            answerValue: false,
+                            answerText: 'Сначала оказать помощь пострадавшему В, потом Б, потом А',
+                        },
+                    ]
+                },        
+            ],      
+
         }
-    },
-    props: {
-        headText: {
-            type: String,
-            default: ''
-        },
-        arrayAnswers: {
-            type: Array,
-            default: () => []
-        }
-    },
-    methods: {
-        isBtnActive() {
-            if (!inputValue) {
-            }
-        },
-    },
+    },    
     components: {
         HeaderComponent,
+        QuestionComponent,
     },
     store: {
         store
-    }
+    },    
 }
 </script>
 
 <style scoped lang="sass">
-.task
+.task_wrapper
     padding: 20px 0 0 20px
-    display: flex
-    &__img
-        width: 100%
-.img_wrapper
-    flex: 0 0 70%
-.question__wrapper
-    padding: 0 20px 0 0
-    margin-right: 20px
-.question
-    margin-bottom: 20px
-.answers_list
-    list-style-type: none
-    li
-        margin-bottom: 10px
-    &__item
-        display: inline-block
-        width: 100%
-        background: #fcb291
-        border-radius: 10px
-        padding: 5px
-        transition: all 0.3s
-        &:hover
-            transform: scale(1.05)
-    input
-        margin-right: 5px
-.btn
-    padding: 10px 30px
-    background: #d3cecc
-    border: none
-    border-radius: 10px
-    font-size: 18px
-    cursor: pointer
-    text-decoration: none
-    color: #000
-    transition: 0.3s all
-    &:hover
-        transform: scale(1.05)
-    .active
-        background: #fcb291
+// .task
+//     padding: 20px 0 0 20px
+//     display: flex
+//     &__img
+//         width: 100%
+// .img_wrapper
+//     flex: 0 0 70%
+// .question__wrapper
+//     padding: 0 20px 0 0
+//     margin-right: 20px
+// .question
+//     margin-bottom: 20px
+// .answers_list
+//     list-style-type: none
+//     li
+//         margin-bottom: 10px
+//     &__item
+//         display: inline-block
+//         width: 100%
+//         background: #fcb291
+//         border-radius: 10px
+//         padding: 5px
+//         transition: all 0.3s
+//         &:hover
+//             transform: scale(1.05)
+//     input
+//         margin-right: 5px
+// .btn
+//     padding: 10px 30px
+//     background: #d3cecc
+//     border: none
+//     border-radius: 10px
+//     font-size: 18px
+//     cursor: pointer
+//     text-decoration: none
+//     color: #000
+//     transition: 0.3s all
+//     &:hover
+//         transform: scale(1.05)
+//     .active
+//         background: #fcb291
 
 </style>
