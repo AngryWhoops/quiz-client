@@ -8,59 +8,29 @@
         view-question-head="questionText"
         array-elements="answers"
         element-value="answerValue"
+        path-for-src="imgPath"
         :step-input="step"
         @on-update="step = $event"
-        v-if="step == 0"
+        v-show="step == 0"
         />
     <QuestionComponent 
         v-bind:question-object="questions[1]" 
         view-question-head="questionText" 
         array-elements="answers" 
         element-value="answerValue"
+        path-for-src="imgPath"
         :step-input="step"
         @on-update="step = $event"
-        v-if="step == 1"/>
+        v-show="step == 1"/>
     <QuestionComponent 
         v-bind:question-object="questions[2]" 
         view-question-head="questionText" 
         array-elements="answers"
         element-value="answerValue"
+        path-for-src="imgPath"
         :step-input="step"
         @on-update="step = $event"
-        v-if="step == 2"/>
-    <!-- <div class="task">
-        <div class="question__wrapper">
-            <h3 class="question">
-                {{question.questionText}}
-            </h3>
-            <ul class="answers_list">
-                <li>
-                    <label class="answers_list__item">
-                        <input type="radio" name="answer" value="true" v-model="inputValue">Вытащить пострадавшего из
-                        автомобиля и оттащить на безопасное расстояние
-                    </label>
-                </li>
-                <li>
-                    <label class="answers_list__item">
-                        <input type="radio" name="answer" value="false" v-model="inputValue">Вызвать скорую помощь
-                    </label>
-                </li>
-                <li>
-                    <label class="answers_list__item">
-                        <input type="radio" name="answer" value="false" v-model="inputValue">Вызвать пожарных
-                    </label>
-                </li>
-            </ul>
-            <button class="btn">
-                Далее
-            </button>
-        </div>
-
-        <div class="img_wrapper">
-            <img class="task__img" src="@/assets/img/question-img/1car.webp" alt="task">
-        </div>
-    </div> -->
-
+        v-show="step == 2"/>
 </template>
 
 <script>
@@ -76,7 +46,7 @@ export default {
             questions: [
                 {
                     questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
-                    imgPath: '@/assets/img/question-img/1car.webp',
+                    imgPath: '1car.webp',
                     theme: 1,
                     answers:[
                         {
@@ -95,15 +65,15 @@ export default {
                 },
                 {
                     questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
-                    imgPath: '@/assets/img/question-img/2car.webp',
+                    imgPath: '2car.webp',
                     theme: 1,
                     answers:[
                         {
-                            answerValue: false,
+                            answerValue: 1,
                             answerText: 'Вызвать скорую помощь',
                         },
                         {
-                            answerValue: false,
+                            answerValue: 2,
                             answerText: 'Подойти к пострадавшему и проверить наличие признаков жизни',
                         },
                         {
@@ -114,15 +84,15 @@ export default {
                 },
                 {
                     questionText: 'Оцените обстановку и выберите приоритетность оказания первой помощи пострадавшим',
-                    imgPath: '@/assets/img/question-img/1car.webp',
+                    imgPath: '1car.webp',
                     theme: 1,
                     answers:[
                         {
-                            answerValue: false,
+                            answerValue: 1,
                             answerText: 'Сначала оказать помощь пострадавшему А, потом Б, потом В',
                         },
                         {
-                            answerValue: false,
+                            answerValue: 2,
                             answerText: 'Сначала оказать помощь пострадавшему А, потом В, потом Б',
                         },
                         {
@@ -130,15 +100,15 @@ export default {
                             answerText: 'Сначала оказать помощь пострадавшему Б, потом А, потом В',
                         },
                         {
-                            answerValue: false,
+                            answerValue: 3,
                             answerText: 'Сначала оказать помощь пострадавшему Б, потом В, потом А',
                         },
                         {
-                            answerValue: false,
+                            answerValue: 4,
                             answerText: 'Сначала оказать помощь пострадавшему В, потом А, потом Б',
                         },
                         {
-                            answerValue: false,
+                            answerValue: 5,
                             answerText: 'Сначала оказать помощь пострадавшему В, потом Б, потом А',
                         },
                     ]

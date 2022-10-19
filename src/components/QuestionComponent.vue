@@ -13,13 +13,13 @@
                     </label>                    
                 </li>                
             </ul>
-            <button class="btn" @click="stepIncrement">
+            <button class="btn" @click="stepIncrement" v-if="inputValue">
                 Далее
             </button>            
         </div>
-        <!-- <div class="img_wrapper">
-            <img class="task__img" src={{question.imgPath}} alt="task">
-        </div> -->
+        <div class="img_wrapper">
+            <img class="task__img" :src="createImgPath" alt="task">
+        </div>
     </div>
     
 </template>
@@ -33,6 +33,7 @@ export default {
             inputValue: '',
             localObject: this.questionObject,
             localStep: this.stepInput,
+            localImgPath: this.pathForSrc,
         }
     },
     props: {
@@ -66,6 +67,9 @@ export default {
          */
         stepInput: {
             type: Number
+        },
+        pathForSrc: {
+            type: String
         }
     },
     emits: ['onUpdate'],
@@ -73,12 +77,29 @@ export default {
         stepIncrement() {
             this.localStep++;
             this.$emit('onUpdate', this.localStep);
-        }
+        },
+        // createImgPath(){
+        //     console.log(this.localObject[this.localImgPath]);
+            
+        //     const fileName = this.localObject[this.localImgPath];
+        //     console.log(fileName);
+        //     return require(`../assets/img/${fileName}`);
+        // }
     },
     watch: {
         questionObject() {
             this.localObject = this.questionObject;
         },
+    },
+    computed: {
+        createImgPath(){
+            console.log(this.localObject[this.localImgPath]);
+            
+            const fileName = this.localObject[this.localImgPath];
+            console.log(fileName);
+
+            return require(`../assets/img/${fileName}`);
+        }
     }
 }
 </script>
