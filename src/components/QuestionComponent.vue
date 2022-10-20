@@ -128,7 +128,8 @@ export default {
     &__item
         display: inline-block
         width: 100%
-        background: #fcb291
+        background: #212945
+        color: #fff
         border-radius: 10px
         padding: 5px
         transition: all 0.3s

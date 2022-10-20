@@ -19,7 +19,7 @@
           <br>После того, как вы ответите на последний вопрос, появится результат прохождения практики. Если он положительный, то в специальной форме введите свои ФИО и нажмите кнопку “Отправить”. В случае отрицательного результата подготовьтесь и повторите попытку.
         </p>
         <div class="btn__wrapper">
-          <router-link to="/question" class="btn">Начать</router-link>
+          <router-link to="/question" class="btn">Начать тестирование</router-link>
         </div>
       </div>    
     </div>    
@@ -99,12 +99,13 @@ export default {
   list-style-type: none
 .list__item
   padding: 10px 20px
-  background: #fcb291
+  background: #212945
   margin-bottom: 10px
   border-radius: 10px
   cursor: default
   font-size: 18px    
   transition: 0.3s all
+  color: #fff
   &:hover
     transform: scale(1.05)
 .instraction
@@ -119,13 +120,13 @@ export default {
 .btn
   padding: 20px 60px
   margin-top: 15px
-  background: #fcb291
+  background: #74070a
   border: none
   border-radius: 10px
   font-size: 25px
   cursor: pointer
   text-decoration: none
-  color: #000
+  color: #fff
   transition: 0.3s all
   &:hover
     transform: scale(1.05)

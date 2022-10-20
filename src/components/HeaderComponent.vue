@@ -22,7 +22,8 @@ export default {
     justify-content: space-between
     align-items: center
     font-size: 20px
-    background: #fcb291 
+    background: #4a5a94
+    color: #fff
     &__item
         flex: 0 0 140px
     &__logo
