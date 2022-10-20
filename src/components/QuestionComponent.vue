@@ -7,15 +7,17 @@
                 {{ localObject[viewQuestionHead] }}
             </h3>
             <ul class="answers_list">
-                <li v-for="item in localObject[arrayElements]" v-bind:key="item[elementValue]">
-                    <label class="answers_list__item">
-                        <input type="radio" name="answer" v-bind:value="item[elementValue]" v-model="inputValue">{{ item.answerText }}
-                    </label>                    
-                </li>                
+                <!-- <transition-group> -->
+                    <li v-for="item in localObject[arrayElements]" v-bind:key="item[elementValue]">
+                        <label class="answers_list__item">
+                            <input type="radio" name="answer" v-bind:value="item[elementValue]" v-model="inputValue">{{ item.answerText }}
+                        </label>                    
+                    </li>
+                <!-- </transition-group>                                 -->
             </ul>
-            <button class="btn" @click="stepIncrement" v-if="inputValue">
-                Далее
-            </button>            
+            <transotion name="btn-fade" mode="out-in" appear>
+                <button class="btn" @click="stepIncrement" v-if="inputValue">Далее</button> 
+            </transotion>                       
         </div>
         <div class="img_wrapper">
             <img class="task__img" :src="createImgPath" alt="task">
@@ -68,6 +70,9 @@ export default {
         stepInput: {
             type: Number
         },
+        /**
+         * Имя элемента для src
+         */
         pathForSrc: {
             type: String
         }
@@ -93,11 +98,10 @@ export default {
     },
     computed: {
         createImgPath(){
-            console.log(this.localObject[this.localImgPath]);
-            
+            // console.log(this.localObject[this.localImgPath]);            
             const fileName = this.localObject[this.localImgPath];
-            console.log(fileName);
-
+            // console.log(fileName);
+            //return 'D:/VS_Code_files/quiz/quiz-client/src/assets/img/1car.webp';
             return require(`../assets/img/${fileName}`);
         }
     }
@@ -106,7 +110,7 @@ export default {
 
 <style scoped lang="sass">
 .task
-    // padding: 20px 0 0 20px
+    padding: 20px 20px 20px 0
     display: flex
     &__img
         width: 100%
@@ -144,6 +148,12 @@ export default {
     transition: 0.3s all
     &:hover
         transform: scale(1.05)
-    .active
-        background: #fcb291
+.btn-fade-enter-active
+    transition: opacity 0.3s ease
+.btn-fade-leave-active 
+    transition: opacity 0.3s ease
+.btn-fade-enter-from
+    opacity: 0
+.btn-fade-leave-to 
+    opacity: 0
 </style>

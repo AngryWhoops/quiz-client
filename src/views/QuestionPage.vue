@@ -1,9 +1,8 @@
 <template>
     <HeaderComponent></HeaderComponent>
-    <div class="task_wrapper">
-        
-    </div>
-    <QuestionComponent 
+
+    <!-- <transition name="component-fade" mode="out-in" appear> -->
+        <QuestionComponent 
         v-bind:question-object="questions[0]"
         view-question-head="questionText"
         array-elements="answers"
@@ -11,9 +10,11 @@
         path-for-src="imgPath"
         :step-input="step"
         @on-update="step = $event"
-        v-show="step == 0"
-        />
-    <QuestionComponent 
+        v-if="step == 0" />        
+    <!-- </transition> -->
+
+    <!-- <transition name="component-fade" mode="out-in"> -->
+        <QuestionComponent 
         v-bind:question-object="questions[1]" 
         view-question-head="questionText" 
         array-elements="answers" 
@@ -21,8 +22,11 @@
         path-for-src="imgPath"
         :step-input="step"
         @on-update="step = $event"
-        v-show="step == 1"/>
-    <QuestionComponent 
+        v-if="step == 1" />
+    <!-- </transition> -->
+
+    <!-- <transition name="component-fade" mode="out-in"> -->
+        <QuestionComponent 
         v-bind:question-object="questions[2]" 
         view-question-head="questionText" 
         array-elements="answers"
@@ -30,7 +34,10 @@
         path-for-src="imgPath"
         :step-input="step"
         @on-update="step = $event"
-        v-show="step == 2"/>
+        v-if="step == 2" />
+    <!-- </transition> -->
+    
+    
 </template>
 
 <script>
@@ -45,7 +52,7 @@ export default {
             step: 0,
             questions: [
                 {
-                    questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
+                    questionText: 'Вопрос №1 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
                     imgPath: '1car.webp',
                     theme: 1,
                     answers:[
@@ -64,7 +71,7 @@ export default {
                     ]
                 },
                 {
-                    questionText: 'Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
+                    questionText: 'Вопрос №2 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации',
                     imgPath: '2car.webp',
                     theme: 1,
                     answers:[
@@ -83,7 +90,7 @@ export default {
                     ]
                 },
                 {
-                    questionText: 'Оцените обстановку и выберите приоритетность оказания первой помощи пострадавшим',
+                    questionText: 'Вопрос №3 Оцените обстановку и выберите приоритетность оказания первой помощи пострадавшим',
                     imgPath: '1car.webp',
                     theme: 1,
                     answers:[
@@ -129,48 +136,12 @@ export default {
 </script>
 
 <style scoped lang="sass">
-.task_wrapper
-    padding: 20px 0 0 20px
-// .task
-//     padding: 20px 0 0 20px
-//     display: flex
-//     &__img
-//         width: 100%
-// .img_wrapper
-//     flex: 0 0 70%
-// .question__wrapper
-//     padding: 0 20px 0 0
-//     margin-right: 20px
-// .question
-//     margin-bottom: 20px
-// .answers_list
-//     list-style-type: none
-//     li
-//         margin-bottom: 10px
-//     &__item
-//         display: inline-block
-//         width: 100%
-//         background: #fcb291
-//         border-radius: 10px
-//         padding: 5px
-//         transition: all 0.3s
-//         &:hover
-//             transform: scale(1.05)
-//     input
-//         margin-right: 5px
-// .btn
-//     padding: 10px 30px
-//     background: #d3cecc
-//     border: none
-//     border-radius: 10px
-//     font-size: 18px
-//     cursor: pointer
-//     text-decoration: none
-//     color: #000
-//     transition: 0.3s all
-//     &:hover
-//         transform: scale(1.05)
-//     .active
-//         background: #fcb291
-
+.component-fade-enter-active
+    transition: opacity 0.3s ease
+.component-fade-leave-active 
+    transition: opacity 0.3s ease
+.component-fade-enter-from
+    opacity: 0
+.component-fade-leave-to 
+    opacity: 0
 </style>
