@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   base: "/quiz-cient/",
+  publicPath: "/",
 });
 
 // const { defineConfig } = require('@vue/cli-service');
