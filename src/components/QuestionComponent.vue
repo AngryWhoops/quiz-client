@@ -1,29 +1,27 @@
 <template>
-   
     <div class="task">
-             
         <div class="question__wrapper">
             <h3 class="question">
                 {{ localObject[viewQuestionHead] }}
             </h3>
             <ul class="answers_list">
                 <!-- <transition-group> -->
-                    <li v-for="item in localObject[arrayElements]" v-bind:key="item[elementValue]">
-                        <label class="answers_list__item">
-                            <input type="radio" name="answer" v-bind:value="item[elementValue]" v-model="inputValue">{{ item.answerText }}
-                        </label>                    
-                    </li>
+                <li v-for="item in localObject[arrayElements]" v-bind:key="item[elementValue]">
+                    <label class="answers_list__item">
+                        <input type="radio" name="answer" v-bind:value="item[elementValue]" v-model="inputValue">{{
+                        item.answerText }}
+                    </label>
+                </li>
                 <!-- </transition-group>                                 -->
             </ul>
-            <transotion name="btn-fade" mode="out-in" appear>
-                <button class="btn" @click="stepIncrement" v-if="inputValue">Далее</button> 
-            </transotion>                       
+            <!-- <transotion name="btn-fade" mode="out-in" appear> -->
+            <button class="btn" @click="stepIncrement" v-if="inputValue">Далее</button>
+            <!-- </transotion>                        -->
         </div>
         <div class="img_wrapper">
             <img class="task__img" :src="createImgPath" alt="task">
         </div>
     </div>
-    
 </template>
 
 <script>
@@ -41,7 +39,7 @@ export default {
     props: {
         /**
          *Входящие данные
-        */        
+        */
         questionObject: {
             type: Object,
             required: true
@@ -51,7 +49,7 @@ export default {
          */
         viewQuestionHead: {
             type: String
-        }, 
+        },
         /**
          * Массив ответов
          */
@@ -85,7 +83,7 @@ export default {
         },
         // createImgPath(){
         //     console.log(this.localObject[this.localImgPath]);
-            
+
         //     const fileName = this.localObject[this.localImgPath];
         //     console.log(fileName);
         //     return require(`../assets/img/${fileName}`);
@@ -97,7 +95,7 @@ export default {
         },
     },
     computed: {
-        createImgPath(){
+        createImgPath() {
             // console.log(this.localObject[this.localImgPath]);            
             const fileName = this.localObject[this.localImgPath];
             // console.log(fileName);
@@ -115,7 +113,7 @@ export default {
     &__img
         width: 100%
 .img_wrapper
-    flex: 0 0 70%
+    flex: 0 0 65%
 .question__wrapper
     padding: 0 20px 0 20px
     margin-right: 20px

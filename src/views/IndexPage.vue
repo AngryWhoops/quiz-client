@@ -1,17 +1,17 @@
 <template>
-  <HeaderComponent></HeaderComponent>
+  <HeaderComponent />
+  <!-- :themes-list="questions" -->
   <div class="info-block">
     <h1 class="themes__title">Оказание первой помощи. Практическая часть</h1>
-    <div class="themes__wrapper">    
-      <div class="themes">      
+    <div class="themes__wrapper">
+      <div class="themes">
         <h2 class="subtitle">Темы, по которым будет проводится тестирование:</h2>
         <ul class="themes-list" >
           <li class="list__item" v-for="theme in themes" v-bind:key="theme" v-bind:theme="theme">
             <p :value="theme.value">{{theme.label}}</p>
           </li>
-        </ul>      
+        </ul>
       </div>
-
       <div class="instraction">
         <h2 class="subtitle">Информация по прохождению практики</h2>
         <p class="instraction__text">
@@ -21,8 +21,8 @@
         <div class="btn__wrapper">
           <router-link to="/question" class="btn">Начать тестирование</router-link>
         </div>
-      </div>    
-    </div>    
+      </div>
+    </div>
   </div>
 </template>
 
@@ -73,8 +73,8 @@ export default {
     }
   },
   components: {
-    HeaderComponent
-  }
+    HeaderComponent,
+  },
 };
 </script>
 
@@ -84,7 +84,7 @@ export default {
 .themes__wrapper
   display: flex
   justify-content: space-between
-  padding: 0 50px  
+  padding: 0 50px
 .subtitle
   font-size: 20px
   margin-bottom: 15px
@@ -103,13 +103,13 @@ export default {
   margin-bottom: 10px
   border-radius: 10px
   cursor: default
-  font-size: 18px    
+  font-size: 18px
   transition: 0.3s all
   color: #fff
   &:hover
     transform: scale(1.05)
 .instraction
-  &__text    
+  &__text
     font-size: 18px
     text-align: justify
     max-width: 90%
@@ -131,4 +131,3 @@ export default {
   &:hover
     transform: scale(1.05)
 </style>
-
