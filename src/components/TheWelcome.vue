@@ -38,6 +38,7 @@ import WelcomeItem from "./WelcomeItem.vue";
       >VSCode</a
     >
     +
+
     <a
       href="https://github.com/johnsoncodehk/volar"
       target="_blank"

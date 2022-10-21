@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true,
+  },
+  "prettier.vueIndentScriptAndStyle": true,
+  "eslint.lintTask.enable": true,
+  "git.autofetch": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+}
