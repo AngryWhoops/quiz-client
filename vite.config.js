@@ -11,8 +11,6 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  transpileDependencies: true,
-  publicPath: process.env.NODE_ENV === "production" ? "/quiz-client/" : "/",
 });
 
 // const { defineConfig } = require('@vue/cli-service');
