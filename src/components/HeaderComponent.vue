@@ -1,36 +1,36 @@
 <template>
-    <header class="header">
-        <a class="header__item" href="#">
-            <img class="header__logo" src="@/assets/img/logo.png" alt="logo">
-        </a>
-        <p class="header__theme" >
-            <!-- {{themesList[localArray]}} -->
-            Оказание первой помощи. Практическая часть
-        </p>
-    </header>
+  <header class="header">
+    <a class="header__item" href="#">
+      <img class="header__logo" src="@/assets/img/logo.png" alt="logo" />
+    </a>
+    <p class="header__theme">
+      <!-- {{themesList[localArray]}} -->
+      Оказание первой помощи. Практическая часть
+    </p>
+  </header>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            localArray: this.themesList,
-        }
+  data() {
+    return {
+      localArray: this.themesList,
+    };
+  },
+  props: {
+    /**
+     * Входящие данные
+     */
+    themesList: {
+      type: Object,
+      required: true,
     },
-    props: {
-        /**
-         * Входящие данные
-         */
-        themesList: {
-            type: Object,            
-            required: true,
-        },
-        incomingString: {
-            type: String,
-            default: 'Оказание первой помощи. Практическая часть',
-        }
+    incomingString: {
+      type: String,
+      default: "Оказание первой помощи. Практическая часть",
     },
-}
+  },
+};
 </script>
 
 <style scoped lang="sass">
@@ -49,4 +49,3 @@ export default {
     &__theme
         text-align: center
 </style>
-

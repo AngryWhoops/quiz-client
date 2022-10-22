@@ -5,11 +5,17 @@
     <h1 class="themes__title">Оказание первой помощи. Практическая часть</h1>
     <div class="themes__wrapper">
       <div class="themes">
-        <h2 class="subtitle">Темы, по которым будет проводится тестирование:</h2>
-        <ul class="themes-list" >
-          <li class="list__item" v-for="theme in themes" v-bind:key="theme" v-bind:theme="theme">
-            <p :value="theme.value">{{theme.label}}</p>
-
+        <h2 class="subtitle">
+          Темы, по которым будет проводится тестирование:
+        </h2>
+        <ul class="themes-list">
+          <li
+            class="list__item"
+            v-for="theme in themes"
+            v-bind:key="theme"
+            v-bind:theme="theme"
+          >
+            <p :value="theme.value">{{ theme.label }}</p>
           </li>
         </ul>
       </div>
@@ -147,4 +153,3 @@ export default {
   &:hover
     transform: scale(1.05)
 </style>
-
