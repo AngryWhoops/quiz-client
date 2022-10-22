@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
     <div class="task">
         <div class="question__wrapper">

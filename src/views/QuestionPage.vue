@@ -43,56 +43,11 @@
 </template>
 
 <script>
-import HeaderComponent from '@/components/HeaderComponent.vue';
-import QuestionComponent from '@/components/QuestionComponent.vue';
 import questions from '@/questions/questions';
 // import questions from "@/questions/questions";
 export default {
-  data() {
-    return {
-      step: 0,
-      questions: [
-        {
-
-          questionText:
-            "Вопрос №1 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации",
-          imgPath: "1car.webp",
-          theme: 1,
-          answers: [
-            {
-              answerValue: 1,
-              answerText: "Вызвать скорую помощь",
-            },
-            {
-              answerValue: true,
-              answerText:
-                "Вытащить пострадавшего из автомобиля и перенести на безопасное расстояние",
-            },
-            {
-              answerValue: 2,
-              answerText: "Вызвать пожарных",
-            },
-          ],
-        },
-        {
-
-
-            },
-          ],
-        },
-        {
-
-            },
-          ],
-        },
-      ],
-
-    };
-  },
-  components: {
-    HeaderComponent,
-    QuestionComponent,
-  },
+  
+}
 
 </script>
 

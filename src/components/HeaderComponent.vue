@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
     <header class="header">
         <a class="header__item" href="#">

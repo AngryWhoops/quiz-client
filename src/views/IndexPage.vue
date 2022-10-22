@@ -146,8 +146,5 @@ export default {
   transition: 0.3s all
   &:hover
     transform: scale(1.05)
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> 0063468db5b54b47960002ce23e4eb5038393590
+
