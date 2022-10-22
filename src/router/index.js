@@ -1,19 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import IndexPage from '@/views/IndexPage.vue';
-import QuestionPage from '@/views/QuestionPage.vue';
-// import HomeView from '../views/HomeView.vue';
+import IndexPage from "@/views/IndexPage.vue";
+import QuestionPage from "@/views/QuestionPage.vue";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    name: 'IndexPage',
+    path: "/",
+    name: "IndexPage",
     component: IndexPage,
   },
   {
-    path: '/question',
-    name: 'QuestionPage',
-    component: QuestionPage
-  }
+    path: "/question",
+    name: "QuestionPage",
+    component: QuestionPage,
+  },
   // {
   //   path: '/about',
   //   name: 'about',
@@ -21,11 +20,10 @@ const routes = [
   //   // this generates a separate chunk (about.[hash].js) for this route
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),}
-
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 

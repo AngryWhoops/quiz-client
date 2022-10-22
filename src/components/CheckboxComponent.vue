@@ -2,43 +2,39 @@
   <div>
     <label for="checkbox">
       {{ checkboxName }}
-      <input id="checkbox" type="checkbox">
+      <input id="checkbox" type="checkbox" />
     </label>
   </div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      isChecked: this.modelValue || this.checked
+      isChecked: this.modelValue || this.checked,
     };
   },
-  emits: ['update:modelValue', 'change'],
+  emits: ["update:modelValue", "change"],
   props: {
     modelValue: {
-      required: true
+      required: true,
     },
     checked: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   watch: {
     modelValue() {
       this.isChecked = this.modelValue;
-    }
+    },
   },
   methods: {
-    onClick(e) {
-      this.$emit('update:modelValue', this.isChecked);
-    }
-  }
+    onClick() {
+      this.$emit("update:modelValue", this.isChecked);
+    },
+  },
 };
-
 </script>
 
-<style>
-
-</style>
+<style></style>

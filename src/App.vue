@@ -1,12 +1,10 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
-
 export default {
-  components: {
-  },
+  components: {},
 };
 </script>
 
@@ -16,5 +14,4 @@ export default {
   padding: 0
   box-sizing: border-box
   font-family: 'Open Sans'
-  
 </style>
