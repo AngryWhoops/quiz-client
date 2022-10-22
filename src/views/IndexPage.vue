@@ -5,24 +5,11 @@
     <h1 class="themes__title">Оказание первой помощи. Практическая часть</h1>
     <div class="themes__wrapper">
       <div class="themes">
-<<<<<<< HEAD
         <h2 class="subtitle">Темы, по которым будет проводится тестирование:</h2>
         <ul class="themes-list" >
           <li class="list__item" v-for="theme in themes" v-bind:key="theme" v-bind:theme="theme">
             <p :value="theme.value">{{theme.label}}</p>
-=======
-        <h2 class="subtitle">
-          Темы, по которым будет проводится тестирование:
-        </h2>
-        <ul class="themes-list">
-          <li
-            class="list__item"
-            v-for="theme in themes"
-            v-bind:key="theme"
-            v-bind:theme="theme"
-          >
-            <p :value="theme.value">{{ theme.label }}</p>
->>>>>>> 0063468db5b54b47960002ce23e4eb5038393590
+
           </li>
         </ul>
       </div>
