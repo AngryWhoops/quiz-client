@@ -10,9 +10,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  base: "/quiz-client/",
-  //base: process.env.VITE_BASE_URL,
-  //publicPath: "/quiz-client/",
+  // eslint-disable-next-line no-undef
+  base: command === "build" ? "/quiz-client/" : "/",
+  //base: "/quiz-client/",
 });
 
 // export default defineConfig(({ command }) => {
