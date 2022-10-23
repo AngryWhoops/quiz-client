@@ -10,10 +10,10 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  build: {
-    base: "/quiz-client/",
-  },
-  //base: "/",
+  // build: {
+  //   base: "/quiz-client/",
+  // },
+  base: "/quiz-client/",
   // eslint-disable-next-line no-undef
   //base: mode === "build" ? "/quiz-client/" : "/",
   //base: "/quiz-client/",
