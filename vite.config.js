@@ -14,7 +14,7 @@ export default defineConfig({
   // eslint-disable-next-line no-undef
   //base: process.env.BASE,
   base: "/quiz-client/",
-  publicPath: "/",
+  publicPath: "/quiz-client/",
 });
 
 // const { defineConfig } = require('@vue/cli-service');
