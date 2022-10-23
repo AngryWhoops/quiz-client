@@ -18,9 +18,8 @@ git commit -m 'deploy'
 
 # если вы публикуете по адресу https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-git push -f git@github.com:AngryWhoops/AngryWhoops.github.io.git gh-pages
 
 # если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
-#git push -f git@github.com:AngryWhoops/quiz-client.git master:gh-pages
+git push -f git@github.com:AngryWhoops/quiz-client.git master:gh-pages
 
 cd -
