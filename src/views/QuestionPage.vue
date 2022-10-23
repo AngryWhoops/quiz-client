@@ -1,6 +1,4 @@
 <template>
-  <header-component />
-
   <!-- <transition name="component-fade" mode="out-in" appear> -->
   <question-component
     v-bind:question-object="questions[0]"
@@ -8,6 +6,7 @@
     array-elements="answers"
     element-value="answerValue"
     path-for-src="imgPath"
+    question-theme="theme"
     :step-input="step"
     @on-update="step = $event"
     v-if="step == 0"
@@ -21,6 +20,7 @@
     array-elements="answers"
     element-value="answerValue"
     path-for-src="imgPath"
+    question-theme="theme"
     :step-input="step"
     @on-update="step = $event"
     v-if="step == 1"
@@ -34,6 +34,7 @@
     array-elements="answers"
     element-value="answerValue"
     path-for-src="imgPath"
+    question-theme="theme"
     :step-input="step"
     @on-update="step = $event"
     v-if="step == 2"
@@ -42,7 +43,6 @@
 </template>
 
 <script>
-import HeaderComponent from "@/components/HeaderComponent.vue";
 import QuestionComponent from "@/components/QuestionComponent.vue";
 
 // import questions from "@/questions/questions";
@@ -55,7 +55,7 @@ export default {
           questionText:
             "Вопрос №1 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации",
           imgPath: "1car.webp",
-          theme: 1,
+          theme: "Тема 1 ",
           answers: [
             {
               answerValue: 1,
@@ -76,7 +76,7 @@ export default {
           questionText:
             "Вопрос №2 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации",
           imgPath: "2car.webp",
-          theme: 1,
+          theme: "Тема 2 ",
           answers: [
             {
               answerValue: 1,
@@ -97,7 +97,7 @@ export default {
           questionText:
             "Вопрос №3 Оцените обстановку и выберите приоритетность оказания первой помощи пострадавшим",
           imgPath: "1car.webp",
-          theme: 1,
+          theme: "Тема 3 ",
           answers: [
             {
               answerValue: 1,
@@ -135,7 +135,7 @@ export default {
     };
   },
   components: {
-    HeaderComponent,
+    // HeaderComponent,
     QuestionComponent,
   },
 };

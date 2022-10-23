@@ -4,8 +4,7 @@
       <img class="header__logo" src="@/assets/img/logo.png" alt="logo" />
     </a>
     <p class="header__theme">
-      <!-- {{themesList[localArray]}} -->
-      Оказание первой помощи. Практическая часть
+      {{ themeName }}
     </p>
   </header>
 </template>
@@ -14,18 +13,11 @@
 export default {
   data() {
     return {
-      localArray: this.themesList,
+      themeName: this.currentTheme,
     };
   },
   props: {
-    /**
-     * Входящие данные
-     */
-    themesList: {
-      type: Object,
-      required: true,
-    },
-    incomingString: {
+    currentTheme: {
       type: String,
       default: "Оказание первой помощи. Практическая часть",
     },

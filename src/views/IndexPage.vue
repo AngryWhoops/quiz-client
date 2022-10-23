@@ -1,6 +1,5 @@
 <template>
   <HeaderComponent />
-  <!-- :themes-list="questions" -->
   <div class="info-block">
     <h1 class="themes__title">Оказание первой помощи. Практическая часть</h1>
     <div class="themes__wrapper">
@@ -36,8 +35,8 @@
         </p>
         <div class="btn__wrapper">
           <router-link to="/question" class="btn"
-            >Начать тестирование</router-link
-          >
+            >Начать тестирование
+          </router-link>
         </div>
       </div>
     </div>

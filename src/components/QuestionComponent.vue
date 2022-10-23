@@ -1,4 +1,5 @@
 <template>
+  <header-component :current-theme="localObject[questionTheme]" />
   <div class="task">
     <div class="question__wrapper">
       <h3 class="question">
@@ -30,7 +31,7 @@
 </template>
 
 <script>
-// import questions from "@/questions/questions";
+import HeaderComponent from "@/components/HeaderComponent.vue";
 
 export default {
   data() {
@@ -39,7 +40,6 @@ export default {
       localObject: this.questionObject,
       localStep: this.stepInput,
       localImgPath: this.pathForSrc,
-      // finalImgPath: "",
     };
   },
   props: {
@@ -80,6 +80,12 @@ export default {
     pathForSrc: {
       type: String,
     },
+    /**
+     * Тема вопроса
+     */
+    questionTheme: {
+      type: String,
+    },
   },
   emits: ["onUpdate"],
   methods: {
@@ -87,13 +93,6 @@ export default {
       this.localStep++;
       this.$emit("onUpdate", this.localStep);
     },
-    // createImgPath() {
-    //   // console.log(this.localObject[this.localImgPath]);
-    //   const fileName = this.localObject[this.localImgPath];
-    //   // console.log(fileName);
-    //   return `../assets/img/${fileName}`;
-    //   // return fileName;
-    // },
   },
   watch: {
     questionObject() {
@@ -105,6 +104,9 @@ export default {
       const fileName = this.localObject[this.localImgPath];
       return `../src/assets/img/${fileName}`;
     },
+  },
+  components: {
+    HeaderComponent,
   },
 };
 </script>
