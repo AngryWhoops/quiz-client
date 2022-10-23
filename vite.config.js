@@ -13,8 +13,8 @@ export default defineConfig({
   },
   // eslint-disable-next-line no-undef
   //base: process.env.BASE,
-  base: "/quiz-client/",
-  publicPath: "/quiz-client/",
+  base: process.env.BASE + "/quiz-client/",
+  //publicPath: "/quiz-client/",
 });
 
 // const { defineConfig } = require('@vue/cli-service');
