@@ -1,9 +1,8 @@
 import { fileURLToPath, URL } from "node:url";
-
 import vue from "@vitejs/plugin-vue";
 import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
+//https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   resolve: {
@@ -11,11 +10,18 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // eslint-disable-next-line no-undef
-  //base: process.env.BASE,
   base: "/quiz-client/",
-  publicPath: "/quiz-client/",
+  //base: new URL(import.meta.env.VITE_URL),
 });
+
+// export default defineConfig(({ command }) => {
+//   plugins: [vue()],
+//   resolve: {
+//     alias: {
+//       "@": fileURLToPath(new URL("./src", import.meta.url)),
+//     },
+//   },
+// });
 
 // const { defineConfig } = require('@vue/cli-service');
 

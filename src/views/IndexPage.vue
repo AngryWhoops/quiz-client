@@ -38,6 +38,7 @@
             >Начать тестирование
           </router-link>
         </div>
+        <button @click="test">ЖМАК</button>
       </div>
     </div>
   </div>
@@ -93,8 +94,19 @@ export default {
       ],
     };
   },
+
   components: {
     HeaderComponent,
+  },
+  methods: {
+    /**
+     * Урлы для относительныйх путей
+     */
+    test() {
+      console.log(import.meta.env);
+      console.log(import.meta.env.BASE_URL);
+      console.log(import.meta.env.VITE_URL);
+    },
   },
 };
 </script>

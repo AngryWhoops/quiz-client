@@ -102,7 +102,8 @@ export default {
   computed: {
     createImgPath() {
       const fileName = this.localObject[this.localImgPath];
-      return `../src/assets/img/${fileName}`;
+      //return `../src/assets/img/${fileName}`;
+      return `${import.meta.env.BASE_URL}src/assets/img/${fileName}`;
     },
   },
   components: {
