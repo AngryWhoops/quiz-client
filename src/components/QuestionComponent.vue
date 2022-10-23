@@ -104,7 +104,7 @@ export default {
     createImgPath() {
       const fileName = this.localObject[this.localImgPath];
       //return `../src/assets/img/${fileName}`;
-      return `../${import.meta.BASE_URL}src/assets/img/${fileName}`;
+      return `../${import.meta.BASE_URL}/src/assets/img/${fileName}`;
     },
   },
 };
