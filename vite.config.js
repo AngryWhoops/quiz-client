@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from "node:url";
-import "dotenv/config";
+import * as dotenv from "dotenv";
 import vue from "@vitejs/plugin-vue";
 import { defineConfig } from "vite";
 
@@ -14,7 +14,7 @@ export default defineConfig({
   // eslint-disable-next-line no-undef
   //base: import.meta.env.VITE_BASE_URL,
   // eslint-disable-next-line no-undef
-  base: process.env.BASE,
+  base: dotenv.VITE_BASE_URL,
   //base:"/quiz-client/",
   //publicPath: "/quiz-client/",
 });
