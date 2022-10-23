@@ -12,7 +12,8 @@ export default defineConfig({
     },
   },
   // eslint-disable-next-line no-undef
-  base: process.env.BASE,
+  //base: process.env.BASE,
+  base: "/quiz-client/",
   publicPath: "/",
 });
 
