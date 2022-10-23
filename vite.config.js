@@ -11,9 +11,7 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      base: "/quiz-client/",
-    },
+    base: "/quiz-client/",
   },
   //base: "/",
   // eslint-disable-next-line no-undef
