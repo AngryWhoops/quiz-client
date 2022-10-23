@@ -95,16 +95,15 @@ export default {
       ],
     };
   },
-  // mounted() {
-  //   //console.log(import.meta.env.BASE_URL);
-  //   console.log("TEST");
-  // },
+
   components: {
     HeaderComponent,
   },
   methods: {
+    /**
+     * Урлы для относительныйх путей
+     */
     test() {
-      //console.log(import.meta.env.BASE_URL);
       console.log(import.meta.env);
       console.log(import.meta.env.BASE_URL);
       console.log(import.meta.env.VITE_URL);
