@@ -13,10 +13,8 @@ export default defineConfig({
   // build: {
   //   base: "/quiz-client/",
   // },
-  base: "/quiz-client/",
-  // eslint-disable-next-line no-undef
-  //base: mode === "build" ? "/quiz-client/" : "/",
   //base: "/quiz-client/",
+  base: import.meta.env.BASE_URL,
 });
 
 // export default defineConfig(({ command }) => {
