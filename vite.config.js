@@ -10,24 +10,24 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      base: "/quiz-client/",
+    },
+  },
+  base: "/",
   // eslint-disable-next-line no-undef
-  base: command === "build" ? "/quiz-client/" : "/",
+  //base: mode === "build" ? "/quiz-client/" : "/",
   //base: "/quiz-client/",
 });
 
 // export default defineConfig(({ command }) => {
-//   if (command === "build") {
-//     return {
-//       // dev specific config
-//       base: "/quiz-client/",
-//     };
-//   } else {
-//     // command === 'build'
-//     return {
-//       // build specific config
-//       base: "/",
-//     };
-//   }
+//   plugins: [vue()],
+//   resolve: {
+//     alias: {
+//       "@": fileURLToPath(new URL("./src", import.meta.url)),
+//     },
+//   },
 // });
 
 // const { defineConfig } = require('@vue/cli-service');
