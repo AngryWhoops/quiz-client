@@ -5,7 +5,6 @@
         {{ localObject[viewQuestionHead] }}
       </h3>
       <ul class="answers_list">
-        <!-- <transition-group> -->
         <li
           v-for="item in localObject[arrayElements]"
           v-bind:key="item[elementValue]"
@@ -19,13 +18,10 @@
             />{{ item.answerText }}
           </label>
         </li>
-        <!-- </transition-group>                                 -->
+        <button class="btn" @click="stepIncrement" v-if="inputValue">
+          Далее
+        </button>
       </ul>
-      <!-- <transotion name="btn-fade" mode="out-in" appear> -->
-      <button class="btn" @click="stepIncrement" v-if="inputValue">
-        Далее
-      </button>
-      <!-- </transotion>                        -->
     </div>
     <div class="img_wrapper">
       <img class="task__img" :src="createImgPath" alt="task" />
@@ -43,6 +39,7 @@ export default {
       localObject: this.questionObject,
       localStep: this.stepInput,
       localImgPath: this.pathForSrc,
+      // finalImgPath: "",
     };
   },
   props: {
@@ -90,13 +87,13 @@ export default {
       this.localStep++;
       this.$emit("onUpdate", this.localStep);
     },
-    // createImgPath(){
-    //     console.log(this.localObject[this.localImgPath]);
-
-    //     const fileName = this.localObject[this.localImgPath];
-    //     console.log(fileName);
-    //     return require(`../assets/img/${fileName}`);
-    // }
+    // createImgPath() {
+    //   // console.log(this.localObject[this.localImgPath]);
+    //   const fileName = this.localObject[this.localImgPath];
+    //   // console.log(fileName);
+    //   return `../assets/img/${fileName}`;
+    //   // return fileName;
+    // },
   },
   watch: {
     questionObject() {
@@ -105,11 +102,8 @@ export default {
   },
   computed: {
     createImgPath() {
-      // console.log(this.localObject[this.localImgPath]);
       const fileName = this.localObject[this.localImgPath];
-      // console.log(fileName);
-      //return 'D:/VS_Code_files/quiz/quiz-client/src/assets/img/1car.webp';
-      return require(`../assets/img/${fileName}`);
+      return `../src/assets/img/${fileName}`;
     },
   },
 };

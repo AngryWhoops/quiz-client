@@ -42,6 +42,9 @@
 </template>
 
 <script>
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import QuestionComponent from "@/components/QuestionComponent.vue";
+
 // import questions from "@/questions/questions";
 export default {
   data() {
@@ -130,6 +133,10 @@ export default {
         },
       ],
     };
+  },
+  components: {
+    HeaderComponent,
+    QuestionComponent,
   },
 };
 </script>
