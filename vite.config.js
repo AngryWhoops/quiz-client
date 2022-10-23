@@ -10,11 +10,8 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // build: {
-  //   base: "/quiz-client/",
-  // },
-  //base: "/quiz-client/",
-  base: import.meta.env.BASE_URL,
+  base: "/quiz-client/",
+  //base: new URL(import.meta.env.VITE_URL),
 });
 
 // export default defineConfig(({ command }) => {
