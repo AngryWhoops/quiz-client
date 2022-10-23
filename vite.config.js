@@ -15,7 +15,7 @@ export default defineConfig({
       base: "/quiz-client/",
     },
   },
-  base: "/",
+  //base: "/",
   // eslint-disable-next-line no-undef
   //base: mode === "build" ? "/quiz-client/" : "/",
   //base: "/quiz-client/",
