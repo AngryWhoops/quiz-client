@@ -97,11 +97,6 @@ export default {
   components: {
     HeaderComponent,
   },
-  mounted: {
-    test() {
-      console.log(import.meta.url);
-    },
-  },
 };
 </script>
 
