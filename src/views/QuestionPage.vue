@@ -43,6 +43,7 @@
 </template>
 
 <script>
+// import FormComponent from "@/components/FormComponent.vue";
 import QuestionComponent from "@/components/QuestionComponent.vue";
 
 // import questions from "@/questions/questions";
@@ -135,19 +136,19 @@ export default {
     };
   },
   components: {
-    // HeaderComponent,
     QuestionComponent,
+    // FormComponent,
   },
 };
 </script>
 
 <style scoped lang="sass">
 .component-fade-enter-active
-    transition: opacity 0.3s ease
+  transition: opacity 0.3s ease
 .component-fade-leave-active
-    transition: opacity 0.3s ease
+  transition: opacity 0.3s ease
 .component-fade-enter-from
-    opacity: 0
+  opacity: 0
 .component-fade-leave-to
-    opacity: 0
+  opacity: 0
 </style>

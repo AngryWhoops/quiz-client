@@ -89,6 +89,7 @@ export default {
   },
   emits: ["onUpdate"],
   methods: {
+    /**Увеличение швга вопроса */
     stepIncrement() {
       this.localStep++;
       this.$emit("onUpdate", this.localStep);
@@ -100,6 +101,7 @@ export default {
     },
   },
   computed: {
+    /**Составление пути к изображению */
     createImgPath() {
       const fileName = this.localObject[this.localImgPath];
       //return `../src/assets/img/${fileName}`;
@@ -114,51 +116,51 @@ export default {
 
 <style scoped lang="sass">
 .task
-    padding: 20px 20px 20px 0
-    display: flex
-    &__img
-        width: 100%
+  padding: 20px 20px 20px 0
+  display: flex
+  &__img
+      width: 100%
 .img_wrapper
-    flex: 0 0 65%
+  flex: 0 0 65%
 .question__wrapper
-    padding: 0 20px 0 20px
-    margin-right: 20px
+  padding: 0 20px 0 20px
+  margin-right: 20px
 .question
-    margin-bottom: 20px
+  margin-bottom: 20px
 .answers_list
-    list-style-type: none
-    li
-        margin-bottom: 20px
-    &__item
-        display: inline-block
-        width: 100%
-        background: #212945
-        color: #fff
-        border-radius: 10px
-        padding: 5px
-        transition: all 0.3s
-        &:hover
-            transform: scale(1.02)
-    input
-        margin-right: 5px
-.btn
-    padding: 10px 30px
-    background: #d3cecc
-    border: none
+  list-style-type: none
+  li
+    margin-bottom: 20px
+  &__item
+    display: inline-block
+    width: 100%
+    background: #212945
+    color: #fff
     border-radius: 10px
-    font-size: 18px
-    cursor: pointer
-    text-decoration: none
-    color: #000
-    transition: 0.3s all
+    padding: 5px
+    transition: all 0.3s
     &:hover
-        transform: scale(1.05)
+      transform: scale(1.02)
+  input
+    margin-right: 5px
+.btn
+  padding: 10px 30px
+  background: #d3cecc
+  border: none
+  border-radius: 10px
+  font-size: 18px
+  cursor: pointer
+  text-decoration: none
+  color: #000
+  transition: 0.3s all
+  &:hover
+    transform: scale(1.05)
 .btn-fade-enter-active
-    transition: opacity 0.3s ease
+  transition: opacity 0.3s ease
 .btn-fade-leave-active
-    transition: opacity 0.3s ease
+  transition: opacity 0.3s ease
 .btn-fade-enter-from
-    opacity: 0
+  opacity: 0
 .btn-fade-leave-to
-    opacity: 0
+  opacity: 0
 </style>

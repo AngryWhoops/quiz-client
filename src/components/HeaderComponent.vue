@@ -27,17 +27,17 @@ export default {
 
 <style scoped lang="sass">
 .header
-    padding: 10px 50px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    font-size: 20px
-    background: #212945
-    color: #fff
-    &__item
-        flex: 0 0 140px
-    &__logo
-        width: 100%
-    &__theme
-        text-align: center
+  padding: 10px 50px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  font-size: 20px
+  background: #212945
+  color: #fff
+  &__item
+    flex: 0 0 140px
+  &__logo
+    width: 100%
+  &__theme
+    text-align: center
 </style>
