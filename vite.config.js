@@ -7,10 +7,11 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
+      // "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  // base: "/quiz-client/",
+  base: "/quiz-client/",
   //base: new URL(import.meta.env.VITE_URL),
 });
 
