@@ -14,7 +14,6 @@ import { defineConfig } from "vite";
 //   // base: new URL(import.meta.env.VITE_URL),
 // });
 
-// const path = require("path");
 export default defineConfig({
   plugins: [vue()],
   resolve: {
