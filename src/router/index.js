@@ -1,6 +1,7 @@
 import IndexPage from "@/views/IndexPage.vue";
 import QuestionPage from "@/views/QuestionPage.vue";
 import ResultsPage from "@/views/ResultsPage.vue";
+import TestPage from "@/views/TestPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: "/results",
     name: "ResultsPage",
     component: ResultsPage,
+  },
+  {
+    path: "/testing_page",
+    name: "TestPage",
+    component: TestPage,
   },
   // {
   //   path: '/about',

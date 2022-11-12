@@ -9,6 +9,8 @@ export default {
 </script>
 
 <style lang="sass">
+html, body
+  height: 100%
 *
   margin: 0
   padding: 0
