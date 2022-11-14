@@ -46,11 +46,12 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 export default {
   data() {
     return {
-      fileName: "car-smoke.gif",
+      // fileName: this.pathForSrc,
       inputValue: "",
       localObject: this.questionObject,
       localStep: this.stepInput,
-      localImgPath: this.pathForSrc,
+      localImgPath: this.pathForSrc1,
+      localSecondBgPath: this.pathForSrc2,
     };
   },
   components: {
@@ -91,7 +92,10 @@ export default {
     /**
      * Имя элемента для src
      */
-    pathForSrc: {
+    pathForSrc1: {
+      type: String,
+    },
+    pathForSrc2: {
       type: String,
     },
     /**
@@ -110,8 +114,8 @@ export default {
     },
     changeBg() {
       if (this.inputValue === true) {
-        this.fileName = "car-fire.gif";
-        document.body.style.backgrond = `url("src/assets/img/${this.fileName}") center/cover no-repeat `;
+        let fileName = this.localSecondBgPath;
+        document.body.style.backgrond = `url("img/${fileName}") center/cover no-repeat `;
       }
     },
   },
@@ -122,10 +126,17 @@ export default {
   },
   computed: {
     img_section_style: function () {
-      let bgImg = this.fileName;
-      return {
-        background: `url("src/assets/img/${bgImg}") center/cover no-repeat `,
-      };
+      if (this.inputValue === true) {
+        let bgImg = this.localObject[this.localSecondBgPath];
+        return {
+          background: `url("img/${bgImg}") center/cover no-repeat `,
+        };
+      } else {
+        let bgImg = this.localObject[this.localImgPath];
+        return {
+          background: `url("img/${bgImg}") center/cover no-repeat `,
+        };
+      }
     },
   },
 };

@@ -4,11 +4,23 @@
     view-question-head="questionText"
     array-elements="answers"
     element-value="answerValue"
-    path-for-src="imgPath"
+    path-for-src1="imgPath1"
+    path-for-src2="imgPath2"
     question-theme="theme"
     :step-input="step"
     @on-update="step = $event"
     v-if="step == 0"
+  />
+  <task-component
+    v-bind:question-object="questions[1]"
+    view-question-head="questionText"
+    array-elements="answers"
+    element-value="answerValue"
+    path-for-src="imgPath"
+    question-theme="theme"
+    :step-input="step"
+    @on-update="step = $event"
+    v-if="step == 1"
   />
 </template>
 
@@ -25,7 +37,8 @@ export default {
         {
           questionText:
             "Вопрос №1 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации",
-          imgPath: "1car.webp",
+          imgPath1: "car-smoke.gif",
+          imgPath2: "car-fire.gif",
           theme: "Тема 1 ",
           answers: [
             {
