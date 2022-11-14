@@ -5,13 +5,13 @@
       <span></span>
     </div>
     <div class="list-wrapper">
-      <h2>{{ localObject[viewQuestionHead] }}</h2>
       <div class="answers_list">
+        <h2>{{ localObject[viewQuestionHead] }}</h2>
         <div
           v-for="item in localObject[arrayElements]"
           v-bind:key="item[elementValue]"
         >
-          <label class="answers_list__item" @click="checkAnswer">
+          <label class="answers_list__item">
             <input
               type="radio"
               name="answer"
@@ -19,15 +19,23 @@
               v-model="inputValue"
             />{{ item.answerText }}
           </label>
-          <div
-            class="cross"
-            v-if="inputValue !== true && this.inputValue !== ''"
-          ></div>
-          <div class="check" v-if="this.inputValue === true"></div>
         </div>
-        <button class="btn" @click="stepIncrement" v-show="inputValue">
+      </div>
+
+      <div class="checking_wrapper">
+        <button class="btn" @click="stepIncrement" v-show="inputValue === true">
           Далее
         </button>
+        <div class="correct_wrapper">
+          <div
+            class="cross"
+            v-if="inputValue !== true && inputValue !== ''"
+          ></div>
+          <div
+            class="check"
+            v-if="inputValue === true && inputValue !== ''"
+          ></div>
+        </div>
       </div>
     </div>
   </div>
@@ -100,19 +108,12 @@ export default {
       this.localStep++;
       this.$emit("onUpdate", this.localStep);
     },
-    // checkAnswer() {
-    //   if (this.inputValue !== true || this.inputValue !== "") {
-    //     document.querySelector(".cross").classList.add("active");
-    //     document.querySelector(".check").classList.remove("active");
-    //     this.inputValue = "";
-    //     console.log("wrong");
-    //   }
-    //   if (this.inputValue === true) {
-    //     document.querySelector(".check").classList.add("active");
-    //     document.querySelector(".cross").classList.remove("active");
-    //     console.log("correct");
-    //   }
-    // },
+    changeBg() {
+      if (this.inputValue === true) {
+        this.fileName = "car-fire.gif";
+        document.body.style.backgrond = `url("src/assets/img/${this.fileName}") center/cover no-repeat `;
+      }
+    },
   },
   watch: {
     questionObject() {
@@ -136,20 +137,23 @@ export default {
   display: flex
   flex-direction: column
   h2
-    margin: 30px
+    margin: 30px 0
     color: #fff
+    text-shadow: 0 0 10px rgb(0 0 0 / 90%)
 .gif-wrapper
   flex: 1 1 auto
   margin: 30px
+.list-wrapper
+  display: flex
+  flex-direction: column
 .answers_list
   list-style-type: none
-  margin: 30px
+  margin: 30px 10px 0px 30px
   width: 60%
-  li
-    margin-bottom: 10px
   &__item
     display: inline-block
-    width: 90%
+    width: 100%
+    margin-bottom: 10px
     background: #212945
     color: #fff
     border-radius: 10px
@@ -159,6 +163,15 @@ export default {
       transform: scale(1.02)
   input
     margin-right: 5px
+.checking_wrapper
+  display: flex
+  margin: 0 30px 30px
+  width: 30%
+.correct_wrapper
+  width: 50px
+  height: 50px
+  // background: #000
+  margin: 0 30px
 .cross
   display: inline-block
   margin-left: 10px
@@ -166,20 +179,19 @@ export default {
   &::before
     content: ''
     position: absolute
-    width: 30px
-    height: 3px
-    background: red
+    width: 50px
+    height: 4px
+    background: #e31c22
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%)
     transform: rotate(-45deg)
-    top: -8px
   &::after
     content: ''
     position: absolute
-    width: 30px
-    height: 3px
-    background: red
+    width: 50px
+    height: 4px
+    background: #e31c22
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%)
     transform: rotate(45deg)
-    top: -8px
-
 .check
   display: inline-block
   margin-left: 10px
@@ -187,22 +199,23 @@ export default {
   &::before
     content: ''
     position: absolute
-    width: 30px
-    height: 3px
+    width: 50px
+    height: 4px
     background: green
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%)
     transform: rotate(-45deg)
-    top: -8px
+    top: 2px
     left: 7px
   &::after
     content: ''
     position: absolute
-    width: 15px
-    height: 3px
+    width: 20px
+    height: 4px
     background: green
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%)
     transform: rotate(45deg)
-    top: -2px
-.active
-  display: inline-block
+    top: 12px
+
 .btn
   padding: 10px 30px
   background: #d3cecc

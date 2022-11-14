@@ -34,7 +34,7 @@
           случае отрицательного результата подготовьтесь и повторите попытку.
         </p>
         <div class="btn__wrapper">
-          <router-link to="/question" class="btn"
+          <router-link to="/testing_page" class="btn"
             >Начать тестирование
           </router-link>
         </div>
