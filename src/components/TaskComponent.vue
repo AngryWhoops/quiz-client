@@ -147,6 +147,7 @@ export default {
   min-height: 100vh
   display: flex
   flex-direction: column
+  transition: all 0.3s
   h2
     margin: 30px 0
     color: #fff

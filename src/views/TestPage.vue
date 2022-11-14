@@ -16,7 +16,8 @@
     view-question-head="questionText"
     array-elements="answers"
     element-value="answerValue"
-    path-for-src="imgPath"
+    path-for-src1="imgPath1"
+    path-for-src2="imgPath2"
     question-theme="theme"
     :step-input="step"
     @on-update="step = $event"
@@ -39,7 +40,7 @@ export default {
             "Вопрос №1 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации",
           imgPath1: "car-smoke.gif",
           imgPath2: "car-fire.gif",
-          theme: "Тема 1 ",
+          theme: "Тема №1 Оценка обстановки на месте происшествия",
           answers: [
             {
               answerValue: 1,
@@ -59,8 +60,9 @@ export default {
         {
           questionText:
             "Вопрос №2 Оцените обстановку и выберите действие, которое необходимо выполнить первым в данной ситуации",
-          imgPath: "2car.webp",
-          theme: "Тема 2 ",
+          imgPath1: "2-electricity-on.gif",
+          imgPath2: "2-electricity-off.png",
+          theme: "Тема №1 Оценка обстановки на месте происшествия",
           answers: [
             {
               answerValue: 1,
