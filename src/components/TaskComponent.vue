@@ -2,11 +2,11 @@
   <div class="wrapper" :style="img_section_style">
     <header-component :current-theme="localObject[questionTheme]" />
     <div class="gif-wrapper">
+      <h2 class="que-title">{{ localObject[viewQuestionHead] }}</h2>
       <span></span>
     </div>
     <div class="list-wrapper">
-      <div class="answers_list">
-        <h2>{{ localObject[viewQuestionHead] }}</h2>
+      <div class="answers_list" v-show="inputValue !== true">
         <div
           v-for="item in localObject[arrayElements]"
           v-bind:key="item[elementValue]"
@@ -112,12 +112,12 @@ export default {
       this.localStep++;
       this.$emit("onUpdate", this.localStep);
     },
-    changeBg() {
-      if (this.inputValue === true) {
-        let fileName = this.localSecondBgPath;
-        document.body.style.backgrond = `url("img/${fileName}") center/cover no-repeat `;
-      }
-    },
+    // changeBg() {
+    //   if (this.inputValue === true) {
+    //     let fileName = this.localSecondBgPath;
+    //     document.body.style.backgrond = `url("img/${fileName}") center/cover no-repeat `;
+    //   }
+    // },
   },
   watch: {
     questionObject() {
@@ -148,10 +148,13 @@ export default {
   display: flex
   flex-direction: column
   transition: all 0.3s
-  h2
-    margin: 30px 0
+  .que-title
+    margin: 0 auto
     color: #fff
     text-shadow: 0 0 10px rgb(0 0 0 / 90%)
+    font-size: 20px
+    width: 40%
+    text-align: center
 .gif-wrapper
   flex: 1 1 auto
   margin: 30px
